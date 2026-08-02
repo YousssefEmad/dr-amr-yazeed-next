@@ -25,7 +25,7 @@ export default function SEO({
       <link rel="canonical" href={url} />
       {noIndex && <meta name="robots" content="noindex,nofollow" />}
 
-      {/* hreflang - جاهزة للنسخة الإنجليزية لاحقًا */}
+      {/* hreflang */}
       <link rel="alternate" hrefLang="ar" href={url} />
       <link rel="alternate" hrefLang="x-default" href={url} />
 

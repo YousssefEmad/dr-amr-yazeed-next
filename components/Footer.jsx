@@ -73,7 +73,7 @@ export default function Footer() {
 
         <div className="copyright-two">
           <p>
-            © {year} {siteConfig.name}. جميع الحقوق محفوظة
+            © 2026 دكتور عمرو يزيد. جميع الحقوق محفوظة | تصميم وتطوير Blue
           </p>
         </div>
       </div>

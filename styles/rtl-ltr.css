@@ -1,0 +1,34 @@
+/* =========================================================================
+   rtl-ltr.css
+   -------------------------------------------------------------------------
+   الاستايل الأساسي في globals.css مبني على خصائص "-inline-" (زي
+   margin-inline-start) واللي بتتقلب لوحدها مع تغيير <html dir>.
+   الملف ده بيظبط بس العناصر القليلة اللي فيها left/right صريحة، عشان
+   تفضل شغالة صح لما اللغة تبقى إنجليزي (dir="ltr").
+   ========================================================================= */
+
+/* زرار الرجوع لأعلى + أزرار الاتصال/واتساب العائمة */
+[dir="ltr"] .back-to-top {
+  inset-inline-end: 24px;
+  right: auto;
+  left: 24px;
+}
+
+[dir="ltr"] .wrapper {
+  inset-inline-start: 16px;
+  left: 16px;
+  right: auto;
+}
+
+/* الاتجاه العام لعلامات الأسهم (breadcrumb / readmore) */
+[dir="ltr"] .page-banner .banner-content ul .ph-caret-left,
+[dir="ltr"] .readmore .ph-arrow-left,
+[dir="ltr"] .primary-btn .ph-arrow-left,
+[dir="ltr"] .outline-btn .ph-arrow-left {
+  transform: scaleX(-1);
+}
+
+/* محاذاة نص الفقرات في وضع الإنجليزي */
+[dir="ltr"] body {
+  text-align: left;
+}

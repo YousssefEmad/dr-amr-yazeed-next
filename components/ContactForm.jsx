@@ -2,7 +2,7 @@ import { useState } from "react";
 import { services } from "@/data/services";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState(null); // null | "sending" | "success" | "error"
+  const [status, setStatus] = useState(null);
 
   async function handleSubmit(e) {
     e.preventDefault();

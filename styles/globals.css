@@ -25921,6 +25921,7 @@ display: flex;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
+      height: 100%;
   object-position: center
 }
 

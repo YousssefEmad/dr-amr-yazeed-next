@@ -1,17 +1,21 @@
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
+import { pick, t } from "@/lib/i18n";
 
 export function BlogCard({ post }) {
+  const { locale } = useLocale();
+
   return (
     <div className="col-xl-6">
       <div className="blog-list">
         <div className="blog-img">
-          <img src={post.image} alt={post.title} loading="lazy" />
+          <img src={post.image} alt={pick(post, "title", locale)} loading="lazy" />
         </div>
         <div className="blog-content">
-          <h4 className="mb-2">{post.title}</h4>
-          <p className="mb-4">{post.excerpt}</p>
+          <h4 className="mb-2">{pick(post, "title", locale)}</h4>
+          <p className="mb-4">{pick(post, "excerpt", locale)}</p>
           <Link href={`/blog/${post.slug}`} className="d-flex gap-1 align-items-center">
-            اقرأ المزيد <i className="ph ph-arrow-left" />
+            {t("readArticle", locale)} <i className="ph ph-arrow-left" />
           </Link>
         </div>
       </div>
@@ -19,8 +23,9 @@ export function BlogCard({ post }) {
   );
 }
 
-// عرض محتوى المقال المُقسّم لـ blocks (paragraph / heading / list)
 export function RichText({ blocks }) {
+  if (!blocks?.length) return null;
+
   return (
     <>
       {blocks.map((block, i) => {

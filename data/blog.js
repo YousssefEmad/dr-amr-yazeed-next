@@ -8,6 +8,8 @@ export const posts = [
   date: "2026-09-25",
   excerpt:
     "تعرف على أحدث تقنيات علاج أمراض الشبكية، وأهم الأمراض التي تصيبها، والعوامل التي تحدد طريقة العلاج المناسبة لكل حالة.",
+  excerptEn:
+    "Learn about the latest retina treatment techniques, key retinal diseases, and the factors that determine the right approach for each case.",
   content: [
     {
       type: "paragraph",
@@ -99,6 +101,43 @@ export const posts = [
       text: "احجز موعدك لإجراء فحص شامل للشبكية وتحديد خطة العلاج المناسبة.",
     },
   ],
+  contentEn: [
+    { type: "paragraph", text: "The retina is a light-sensitive layer at the back of the eye that receives images and converts them into nerve signals sent to the brain." },
+    { type: "paragraph", text: "Retinal diseases can reduce vision clarity if not diagnosed and treated in time. Successful treatment depends on early examination and choosing the right technique for the disease type and stage." },
+    { type: "paragraph", text: "Retina treatment options have advanced greatly. Many cases can now be managed with retinal injections, laser therapy, and precise vitreoretinal surgery." },
+    { type: "heading", level: 3, text: "Retinal conditions that need follow-up and treatment" },
+    { type: "list", items: [
+      "Diabetic retinopathy.",
+      "Macular edema.",
+      "Retinal vein occlusion.",
+      "Retinal holes and tears.",
+      "Retinal detachment.",
+      "Vitreous hemorrhage.",
+      "Epiretinal membrane and macular hole.",
+    ]},
+    { type: "paragraph", text: "Treatment varies depending on the cause, location of the problem, and how much it affects the center of vision." },
+    { type: "heading", level: 3, text: "Latest retina treatment techniques" },
+    { type: "list", items: [
+      "Retinal injections.",
+      "Retinal laser treatment.",
+      "Vitrectomy surgery.",
+      "Retinal detachment surgery.",
+    ]},
+    { type: "heading", level: 3, text: "Cost of retina treatment" },
+    { type: "paragraph", text: "The cost of retina treatment differs from one case to another based on several factors, including:" },
+    { type: "list", items: [
+      "Disease type and severity.",
+      "Type of injection or treatment used.",
+      "Number of laser or injection sessions required.",
+      "Need for surgical intervention.",
+      "Required tests and imaging.",
+      "Type of gas or silicone oil used in some surgeries.",
+    ]},
+    { type: "paragraph", text: "Therefore, an exact cost cannot be determined before examining the eye and setting the appropriate treatment plan." },
+    { type: "heading", level: 3, text: "Retina treatment with Dr. Amr Yazeed" },
+    { type: "paragraph", text: "Retina treatment depends on accurate diagnosis and timely intervention. Dr. Amr Yazeed, Lecturer and Consultant of Retina, Vitreous & Laser at the Research Institute of Ophthalmology, diagnoses and treats retinal diseases using modern techniques suited to each case." },
+    { type: "paragraph", text: "Book your appointment for a comprehensive retinal examination and a personalized treatment plan." },
+  ],
 },
 {
   slug: "cataract-vivity-lens",
@@ -108,6 +147,8 @@ export const posts = [
   date: "2026-09-23",
   excerpt:
     "تعرف على عملية إزالة المياه البيضاء، ومميزات عدسة Vivity ممتدة البؤرة، وكيفية اختيار العدسة المناسبة وفقًا لحالة العين واحتياجات كل مريض.",
+  excerptEn:
+    "Learn about cataract surgery, the benefits of the Vivity extended-range lens, and how the right lens is chosen for each eye and patient.",
   content: [
     {
       type: "paragraph",
@@ -197,6 +238,37 @@ export const posts = [
       text: "احجز موعدك لإجراء الفحوصات اللازمة ومعرفة مدى ملاءمة عدسة Vivity لحالتك.",
     },
   ],
+  contentEn: [
+    { type: "paragraph", text: "Cataract is one of the most common causes of reduced vision. It occurs when the natural lens loses transparency, leading to blurred vision, weaker color discrimination, and increased light sensitivity. Effective treatment removes the cloudy lens and replaces it with a clear intraocular lens." },
+    { type: "paragraph", text: "Among modern lenses used in selected cataract cases is the Vivity extended-depth-of-focus lens, designed to provide a wider range of vision—especially for distance and intermediate ranges—with functional near vision for some patients." },
+    { type: "heading", level: 3, text: "What is cataract surgery?" },
+    { type: "paragraph", text: "Cataract surgery removes the cloudy part of the natural lens and implants a clear artificial lens in its place." },
+    { type: "paragraph", text: "The procedure helps improve vision clarity, but the final result depends on the cornea, retina, and optic nerve, as well as precise eye measurements and suitable lens selection." },
+    { type: "heading", level: 3, text: "What is the Vivity lens?" },
+    { type: "paragraph", text: "Vivity is an extended-depth-of-focus intraocular lens. It uses non-diffractive optical technology to widen the range of vision instead of splitting light into multiple focal points like some other lenses, aiming for good distance and intermediate vision with a degree of functional near vision." },
+    { type: "heading", level: 3, text: "Benefits of the Vivity lens" },
+    { type: "list", items: [
+      "Improved distance vision for activities such as watching TV and recognizing faces.",
+      "Better intermediate vision for computer use, dashboard viewing, and arm-length tasks.",
+      "May reduce dependence on glasses for many daily activities, though some patients may still need reading glasses.",
+      "An extended visual range across distances rather than a single focal point.",
+      "Relatively lower visual disturbances such as halos and glare compared with some multifocal lenses, though results vary.",
+    ]},
+    { type: "heading", level: 3, text: "Cost of Vivity lens implantation" },
+    { type: "paragraph", text: "Surgery cost varies based on several factors, including:" },
+    { type: "list", items: [
+      "Lens type and model.",
+      "Astigmatism and need for a Toric lens.",
+      "Eye measurement results.",
+      "Required pre-operative tests.",
+      "Eye condition and associated diseases.",
+      "Medical center and equipment used.",
+    ]},
+    { type: "paragraph", text: "Therefore, the final cost cannot be determined before examination and selecting the suitable lens." },
+    { type: "heading", level: 3, text: "Cataract and lens implantation with Dr. Amr Yazeed" },
+    { type: "paragraph", text: "Dr. Amr Yazeed provides a comprehensive assessment of cataract cases and selects the most suitable lens based on eye tests and each patient's needs." },
+    { type: "paragraph", text: "Book your appointment for the required tests and to learn whether the Vivity lens suits your case." },
+  ],
 },
 {
   slug: "macular-hole",
@@ -206,6 +278,8 @@ export const posts = [
   date: "2026-09-20",
   excerpt:
     "تعرف على أسباب وأعراض ثقب مركز الإبصار، وكيف يتم تشخيصه وعلاجه من خلال جراحات الجسم الزجاجي والشبكية الدقيقة.",
+  excerptEn:
+    "Learn about the causes and symptoms of macular hole, and how it is diagnosed and treated with precise vitreoretinal surgery.",
   content: [
     {
       type: "paragraph",
@@ -290,6 +364,27 @@ export const posts = [
       text: "احجز موعدك لإجراء فحص الشبكية والأشعة المقطعية على مركز الإبصار.",
     },
   ],
+  contentEn: [
+    { type: "paragraph", text: "A macular hole is a retinal condition that affects fine central vision. It forms as a small opening in the macula—the central area of the retina responsible for reading, recognizing faces, and seeing fine detail." },
+    { type: "paragraph", text: "It may begin with mild blur or distortion and worsen gradually if the hole enlarges. Treatment depends on hole size, duration, and impact on visual acuity." },
+    { type: "heading", level: 3, text: "What is the center of vision?" },
+    { type: "paragraph", text: "The center of vision is the central part of the retina, known as the macula. Its center contains the fovea, responsible for the sharpest vision." },
+    { type: "paragraph", text: "A hole in this area may cause difficulty reading, distorted straight lines, and a blurry or dark spot in the middle of the visual field." },
+    { type: "heading", level: 3, text: "Symptoms of macular hole" },
+    { type: "list", items: [
+      "Weak or blurry central vision.",
+      "Straight lines appearing wavy or distorted.",
+      "Difficulty reading small print.",
+      "Difficulty recognizing faces.",
+      "A dark or empty spot in the center of vision.",
+      "Difference in size or shape of objects between the two eyes.",
+    ]},
+    { type: "paragraph", text: "Peripheral vision may remain normal because the problem is concentrated in the center of the retina." },
+    { type: "heading", level: 3, text: "Macular hole repair with Dr. Amr Yazeed" },
+    { type: "paragraph", text: "Successful treatment depends on accurate OCT diagnosis, timely surgery, and relieving traction on the retina using precise vitreoretinal techniques." },
+    { type: "paragraph", text: "Dr. Amr Yazeed examines and diagnoses macular hole cases and sets a treatment plan according to each eye." },
+    { type: "paragraph", text: "Book your appointment for a retinal exam and OCT of the macula." },
+  ],
 },
 {
   slug: "retinal-detachment-surgery",
@@ -299,6 +394,8 @@ export const posts = [
   date: "2026-09-18",
   excerpt:
     "تعرف على أسباب انفصال الشبكية، أعراضه، وأحدث طرق العلاج الجراحي لإصلاح الانفصال والتليفات الناتجة عن قطع وتمزقات الشبكية.",
+  excerptEn:
+    "Learn about the causes and symptoms of retinal detachment, and modern surgical options to repair detachment and related scarring from retinal tears.",
   content: [
     {
       type: "paragraph",
@@ -391,6 +488,28 @@ export const posts = [
       type: "paragraph",
       text: "عند ظهور ومضات مفاجئة أو زيادة في الأجسام العائمة أو ستارة سوداء في مجال الرؤية، يجب إجراء فحص عاجل للشبكية وعدم انتظار تحسن الأعراض تلقائيًا.",
     },
+  ],
+  contentEn: [
+    { type: "paragraph", text: "Retinal detachment is an emergency that needs fast diagnosis and treatment. Delayed intervention may cause permanent vision loss in part of the visual field." },
+    { type: "paragraph", text: "Detachment occurs when the retina separates from its normal position at the back of the eye and loses contact with the tissues that supply oxygen and nutrients." },
+    { type: "paragraph", text: "In some cases it begins with a retinal tear that allows fluid underneath, lifting the retina. Scar tissue or membranes may also pull on the retina and complicate the condition." },
+    { type: "heading", level: 3, text: "What is retinal detachment?" },
+    { type: "paragraph", text: "The retina is a thin, light-sensitive layer that receives images and sends nerve signals to the brain. When detached, it cannot function normally." },
+    { type: "paragraph", text: "Detachment caused by a retinal tear is among the most common types and is known as rhegmatogenous retinal detachment." },
+    { type: "heading", level: 3, text: "Symptoms of retinal detachment" },
+    { type: "list", items: [
+      "Repeated flashes of light.",
+      "Sudden increase in floaters.",
+      "A shadow or dark curtain on one side of vision.",
+      "Sudden blur or drop in vision.",
+      "Loss of part of the visual field.",
+      "Distorted images or difficulty seeing details.",
+    ]},
+    { type: "paragraph", text: "These symptoms require immediate attention from a retina specialist or emergency department, because faster treatment helps protect vision." },
+    { type: "heading", level: 3, text: "Retinal detachment repair with Dr. Amr Yazeed" },
+    { type: "paragraph", text: "Treatment depends on early diagnosis, locating the tear, and choosing the right surgical technique for each case." },
+    { type: "paragraph", text: "Dr. Amr Yazeed diagnoses and treats retinal detachment and related scarring using precise vitreoretinal surgery." },
+    { type: "paragraph", text: "If you notice sudden flashes, more floaters, or a dark curtain in your vision, get an urgent retinal exam and do not wait for symptoms to improve on their own." },
   ],
 },
 ];

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import SEO from "@/components/SEO";
-import { AboutSection, DoctorChiefSection, WhyChooseSection } from "@/components/AboutSection";
+import {
+  AboutSection,
+  SpecialtyHeroSection,
+  WhyChooseSection,
+} from "@/components/AboutSection";
 import ServicesGrid from "@/components/ServiceCard";
 import VideoGrid from "@/components/VideoSection";
 import GalleryGrid from "@/components/GalleryGrid";
@@ -10,31 +14,38 @@ import { services } from "@/data/services";
 import { posts } from "@/data/blog";
 import { galleryImages } from "@/data/gallery";
 import { clinicVideos, testimonialVideos } from "@/data/videos";
+import { useLocale } from "@/context/LocaleContext";
+import { pick, t } from "@/lib/i18n";
 
 export default function HomePage() {
+  const { locale } = useLocale();
+  const homeServices = services.slice(0, 4);
+
   return (
     <>
       <SEO
-        title="الرئيسية"
-        description="دكتور عمرو يزيد - استشاري أمراض وجراحات الشبكية والجسم الزجاجي والليزر. احجز موعدك الآن في معهد بحوث أمراض العيون."
+        title={t("home", locale)}
+        description={t("seoHomeDesc", locale)}
         path="/"
       />
 
-      {/* Hero Banner */}
       <section id="banner" className="banner space-header">
         <div className="banner-img">
-          <img src={doctor.heroImage} alt={doctor.name} />
+          <img
+            src={doctor.heroImage}
+            alt={pick(doctor, "name", locale)}
+          />
         </div>
         <div className="container">
           <div className="row banner-content">
-            <div className="col-12">
-              <h2 className="hero-text mb-3">{doctor.name}</h2>
-              <h3 className="text-white fw-normal">{doctor.jobTitle}</h3>
-              <p className="text-white-50 mt-3">{doctor.affiliation}</p>
-              <div className="d-flex justify-content-center">
+            <div className="col-12 col-lg-8 col-xl-7">
+              <h1 className="hero-text mb-3">{pick(doctor, "name", locale)}</h1>
+              <h2 className="hero-job text-white fw-normal">{pick(doctor, "jobTitle", locale)}</h2>
+              <p className="hero-affiliation text-white-50 mt-3">{pick(doctor, "affiliation", locale)}</p>
+              <div className="d-flex justify-content-center justify-content-lg-start">
                 <Link href="/contact-us" className="theme-btn primary-btn mt-4">
-                احجز موعدك الآن
-              </Link>
+                  {t("bookNow", locale)}
+                </Link>
               </div>
             </div>
           </div>
@@ -44,38 +55,48 @@ export default function HomePage() {
       <AboutSection />
 
       <ServicesGrid
-        services={services}
-        subHeading="خدماتنا الطبية"
-        title="خدمات متخصصة لعلاج أمراض الشبكية وجراحات العيون"
+        services={homeServices}
+        subHeading={t("ourServices", locale)}
+        title={t("servicesTitle", locale)}
+        compact
       />
 
-      <DoctorChiefSection />
+      <SpecialtyHeroSection />
       <WhyChooseSection />
 
-      <VideoGrid videos={clinicVideos} subHeading="ما نقوله" title="فيديوهاتنا" cols="col-lg-2" />
+      <VideoGrid
+        videos={clinicVideos}
+        subHeading={t("videosSub", locale)}
+        title={t("videosTitle", locale)}
+        cols="col-lg-2"
+      />
 
       <section className="gallery pt-120 pb-120">
         <div className="container">
           <div className="section-title">
-            <span className="sub-heading">معرض الصور</span>
-            <h2 className="mb-3">جولة داخل العيادة وبعض آراء عملائنا</h2>
+            <span className="sub-heading">{t("gallerySub", locale)}</span>
+            <h2 className="mb-3">{t("galleryTitle", locale)}</h2>
           </div>
           <GalleryGrid images={galleryImages} />
           <div className="d-flex justify-content-center mt-4">
             <Link href="/gallery" className="outline-btn secondary playFairFont">
-              عرض جميع الصور <i className="ph ph-arrow-left" />
+              {t("allPhotos", locale)} <i className="ph ph-arrow-left" />
             </Link>
           </div>
         </div>
       </section>
 
-      <VideoGrid videos={testimonialVideos} subHeading="آراء العملاء" title="آراء عملاءنا" />
+      <VideoGrid
+        videos={testimonialVideos}
+        subHeading={t("testimonialsSub", locale)}
+        title={t("testimonialsTitle", locale)}
+      />
 
       <section className="recent-news pt-120 pb-120">
         <div className="container">
           <div className="section-title">
-            <h4 className="sub-heading">أحدث المقالات</h4>
-            <h2 className="mb-3">معلومات طبية تساعدك على الحفاظ على صحة عينيك</h2>
+            <h4 className="sub-heading">{t("latestArticles", locale)}</h4>
+            <h2 className="mb-3">{t("articlesTitle", locale)}</h2>
           </div>
           <div className="row g-4">
             {posts.map((p) => (
@@ -84,7 +105,7 @@ export default function HomePage() {
           </div>
           <div className="d-flex justify-content-center mt-4">
             <Link href="/blog" className="outline-btn secondary playFairFont">
-              عرض جميع المقالات <i className="ph ph-arrow-left" />
+              {t("allArticles", locale)} <i className="ph ph-arrow-left" />
             </Link>
           </div>
         </div>

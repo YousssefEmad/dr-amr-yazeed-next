@@ -2,16 +2,20 @@ import SEO from "@/components/SEO";
 import PageBanner from "@/components/PageBanner";
 import { BlogCard } from "@/components/BlogCard";
 import { posts } from "@/data/blog";
+import { useLocale } from "@/context/LocaleContext";
+import { t } from "@/lib/i18n";
 
 export default function BlogListPage() {
+  const { locale } = useLocale();
+
   return (
     <>
       <SEO
-        title="المقالات الطبية"
-        description="مقالات ومعلومات طبية موثوقة عن أمراض الشبكية والجسم الزجاجي والمياه البيضاء، بقلم دكتور عمرو يزيد."
+        title={t("medicalArticles", locale)}
+        description={t("seoBlogDesc", locale)}
         path="/blog"
       />
-      <PageBanner title="المقالات" crumb="المقالات" />
+      <PageBanner title={t("blog", locale)} crumb={t("blog", locale)} />
 
       <section className="pt-120 pb-120 recent-news">
         <div className="container">

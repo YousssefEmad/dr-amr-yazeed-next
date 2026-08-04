@@ -24,8 +24,11 @@ export function LocaleProvider({ children }) {
   // كل ما اللغة تتغير: نحدّث <html lang> و <html dir> ونحفظها
   useEffect(() => {
     if (!ready) return;
-    document.documentElement.lang = locale === "ar" ? "ar" : "en";
-    document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
+    const html = document.documentElement;
+    html.lang = locale === "ar" ? "ar" : "en";
+    html.dir = locale === "ar" ? "rtl" : "ltr";
+    html.setAttribute("dir", locale === "ar" ? "rtl" : "ltr");
+    document.body.style.direction = locale === "ar" ? "rtl" : "ltr";
     window.localStorage.setItem(STORAGE_KEY, locale);
   }, [locale, ready]);
 

@@ -1,13 +1,33 @@
 /* =========================================================================
-   rtl-ltr.css
-   -------------------------------------------------------------------------
-   الاستايل الأساسي في globals.css مبني على خصائص "-inline-" (زي
-   margin-inline-start) واللي بتتقلب لوحدها مع تغيير <html dir>.
-   الملف ده بيظبط بس العناصر القليلة اللي فيها left/right صريحة، عشان
-   تفضل شغالة صح لما اللغة تبقى إنجليزي (dir="ltr").
+   rtl-ltr.css — LTR (English) direction fixes
    ========================================================================= */
 
-/* زرار الرجوع لأعلى + أزرار الاتصال/واتساب العائمة */
+/* globals.css hardcodes direction:rtl on html/body — override with html[dir] */
+html[dir="ltr"],
+html[dir="ltr"] body {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="rtl"],
+html[dir="rtl"] body {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Bootstrap helpers that force right alignment in English */
+[dir="ltr"] .text-start,
+[dir="ltr"] .text-end {
+  text-align: inherit !important;
+}
+
+[dir="ltr"] .text-md-end,
+[dir="ltr"] .text-lg-end,
+[dir="ltr"] .text-xl-end {
+  text-align: left !important;
+}
+
+/* Floating buttons */
 [dir="ltr"] .back-to-top {
   inset-inline-end: 24px;
   right: auto;
@@ -20,7 +40,7 @@
   right: auto;
 }
 
-/* الاتجاه العام لعلامات الأسهم (breadcrumb / readmore) */
+/* Flip back-arrows in LTR */
 [dir="ltr"] .page-banner .banner-content ul .ph-caret-left,
 [dir="ltr"] .readmore .ph-arrow-left,
 [dir="ltr"] .primary-btn .ph-arrow-left,
@@ -28,7 +48,77 @@
   transform: scaleX(-1);
 }
 
-/* محاذاة نص الفقرات في وضع الإنجليزي */
-[dir="ltr"] body {
+/* Hero / section titles */
+[dir="ltr"] .banner .banner-content,
+[dir="ltr"] .section-title,
+[dir="ltr"] .about-content,
+[dir="ltr"] .tp-doctor__chief-info,
+[dir="ltr"] .whychoose-card,
+[dir="ltr"] .details-content,
+[dir="ltr"] .footer-card,
+[dir="ltr"] .contact-title,
+[dir="ltr"] .help-card {
+  text-align: left;
+}
+
+[dir="ltr"] .banner .d-flex.justify-content-lg-start {
+  justify-content: flex-start !important;
+}
+
+/* Header menu */
+[dir="ltr"] .header .menu {
+  flex-direction: row;
+}
+
+[dir="ltr"] .header .menu .submenu-dropdown {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
+[dir="ltr"] .mobile-menu {
+  text-align: left;
+}
+
+/* Doctor chief border accent */
+[dir="ltr"] .tp-doctor__chief-name {
+  border-left: none;
+  border-right: none;
+  border-inline-start: 4px solid #fff;
+}
+
+[dir="rtl"] .tp-doctor__chief-name {
+  border-left: none;
+  border-inline-start: 4px solid #fff;
+}
+
+/* About column order */
+[dir="ltr"] .about-media-col {
+  order: 0;
+}
+
+[dir="ltr"] .about-content-col {
+  order: 1;
+}
+
+/* Team feature list icons */
+[dir="ltr"] .team-feature li,
+[dir="ltr"] .doctor-chief-quals li {
+  flex-direction: row;
+}
+
+/* Breadcrumb */
+[dir="ltr"] .page-banner .banner-content ul {
+  justify-content: flex-start;
+}
+
+/* Service overlay text */
+[dir="ltr"] .service-overlay {
+  text-align: left;
+}
+
+/* Footer lists */
+[dir="ltr"] .navigation-links,
+[dir="ltr"] .contact-two {
   text-align: left;
 }

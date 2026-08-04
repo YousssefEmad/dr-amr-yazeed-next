@@ -2,17 +2,21 @@ import SEO from "@/components/SEO";
 import PageBanner from "@/components/PageBanner";
 import ServicesGrid from "@/components/ServiceCard";
 import { services } from "@/data/services";
+import { useLocale } from "@/context/LocaleContext";
+import { t } from "@/lib/i18n";
 
 export default function ServicesPage() {
+  const { locale } = useLocale();
+
   return (
     <>
       <SEO
-        title="خدماتنا"
-        description="تعرف على جميع الخدمات الطبية التي يقدمها دكتور عمرو يزيد: جراحات الشبكية والجسم الزجاجي، حقن الشبكية، علاج الشبكية بالليزر، علاج المياه البيضاء وزراعة العدسات."
+        title={t("ourServicesPage", locale)}
+        description={t("seoServicesDesc", locale)}
         path="/services"
       />
-      <PageBanner title="خدماتنا" crumb="خدماتنا" />
-      <ServicesGrid services={services} />
+      <PageBanner title={t("ourServicesPage", locale)} crumb={t("ourServicesPage", locale)} />
+      <ServicesGrid services={services} showAllLink={false} />
     </>
   );
 }

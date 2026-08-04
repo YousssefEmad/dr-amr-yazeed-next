@@ -1,6 +1,6 @@
 // data/videos.js
 // -----------------------------------------------------------------------
-// فيديوهات وآراء العملاء (Facebook Reels) - لاحقًا هتتحول لـ Sanity collection "video"
+// فيديوهات وآراء العملاء (Facebook Reels)
 // -----------------------------------------------------------------------
 
 const reelIds = [
@@ -15,6 +15,7 @@ export const clinicVideos = reelIds.map((id, i) => ({
   id,
   embedUrl: `https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${id}%2F&show_text=false&width=267&t=0`,
   title: `فيديو ${i + 1}`,
+  titleEn: `Video ${i + 1}`,
 }));
 
 const testimonialIds = [
@@ -28,6 +29,7 @@ export const testimonialVideos = testimonialIds.map((id, i) => ({
   id,
   embedUrl: `https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${id}%2F&show_text=false&width=560&t=0`,
   title: `رأي عميل ${i + 1}`,
+  titleEn: `Patient review ${i + 1}`,
 }));
 
 export default { clinicVideos, testimonialVideos };

@@ -1,8 +1,6 @@
 // data/site.js
 // -----------------------------------------------------------------------
 // إعدادات الموقع العامة (بيانات التواصل - السوشيال ميديا - القوائم)
-// لاحقًا: هيتم استبدال هذا الملف باستعلام Sanity من نوع Singleton
-// مثال: const site = await client.fetch(`*[_type == "siteSettings"][0]`)
 // -----------------------------------------------------------------------
 
 export const siteConfig = {
@@ -19,34 +17,51 @@ export const siteConfig = {
   themeColor: "#e2bf6b",
   locales: ["ar", "en"],
   defaultLocale: "ar",
+  contactEmail: "youssef7200143@gmail.com",
+  formEndpoint: "/sendmail.php",
 
   phones: [
-    { label: "الخط الرئيسي", value: "+201050794020", href: "tel:+201050794020" },
-    { label: "عيادة التجمع / الاستفسارات", value: "01120606410", href: "tel:+201120606410" },
+    {
+      label: "الخط الرئيسي",
+      labelEn: "Main Line",
+      value: "+201050794020",
+      href: "tel:+201050794020",
+    },
+    {
+      label: "عيادة المهندسين / الاستفسارات",
+      labelEn: "El-Mohandeseen Clinic / Inquiries",
+      value: "01120606410",
+      href: "tel:+201120606410",
+    },
   ],
   whatsapp: "+201120606410",
   emails: ["dramryazeed@gmail.com", "amr.abdelkareem@yahoo.com"],
 
   clinics: [
     {
+      id: "mohandeseen",
+      name: "عيادة المهندسين",
+      nameEn: "El-Mohandeseen Clinic",
+      address: "المهندسين",
+      addressEn: "El-Mohandeseen",
+      mapEmbed: "",
+    },
+    {
       id: "faisal",
       name: "عيادة فيصل",
       nameEn: "Faisal Clinic",
-      address: "فيصل - المهندسين",
-      mapEmbed:
-        "",
-    },
-    {
-      id: "fifth-settlement",
-      name: "عيادة المهندسين",
-      nameEn: "5th Settlement Clinic",
-      address: "عيادة المهندسين",
+      address: "فيصل",
+      addressEn: "Faisal",
       mapEmbed: "",
     },
   ],
 
   socials: [
-    { name: "Facebook", icon: "ph-facebook-logo", href: "https://www.facebook.com/Dr.amr.EyeClinic?locale=ar_AR" },
+    {
+      name: "Facebook",
+      icon: "ph-facebook-logo",
+      href: "https://www.facebook.com/Dr.amr.EyeClinic?locale=ar_AR",
+    },
     { name: "TikTok", icon: "ph-tiktok-logo", href: "https://www.tiktok.com/@dramr.yazzed" },
     { name: "WhatsApp", icon: "ph-whatsapp-logo", href: "https://wa.me/201120606410?text=" },
   ],

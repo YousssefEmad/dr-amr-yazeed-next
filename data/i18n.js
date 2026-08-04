@@ -1,35 +1,42 @@
-// data/i18n.js
-// -----------------------------------------------------------------------
-// قاموس النصوص الثابتة اللي مش موجودة أصلاً في data/*.js (زي أزرار وعناوين
-// عامة). البيانات الفعلية (اسم الدكتور، الخدمات، المقالات...) عندها حقول
-// موازية بـ "En" في ملفاتها (title / titleEn) وبتتقرأ عن طريق pick() في
-// lib/i18n.js مش من هنا.
-//
-// استخدام: import { t } from "@/lib/i18n";  ثم  t("bookNow", locale)
-// -----------------------------------------------------------------------
 
 export const dict = {
   ar: {
     home: "الرئيسية",
     about: "نبذة عن الدكتور",
+    aboutUs: "من نحن",
     services: "الخدمات",
+    ourServicesPage: "خدماتنا",
     media: "الميديا",
     gallery: "معرض الصور",
     videos: "الفيديوهات",
+    ourVideos: "فيديوهاتنا",
     blog: "المقالات",
+    medicalArticles: "المقالات الطبية",
     contact: "تواصل معنا",
 
     bookNow: "احجز موعدك الآن",
+    bookNowShort: "احجز الآن",
     readMore: "اعرف المزيد",
     readArticle: "اقرأ المزيد",
+    readFullArticle: "اقرأ المقال",
     allServices: "جميع الخدمات",
     allArticles: "عرض جميع المقالات",
     allPhotos: "عرض جميع الصور",
     sendRequest: "إرسال الطلب",
     sending: "جاري الإرسال...",
+    formSuccess: "تم إرسال طلبك بنجاح، هيتم التواصل معك قريبًا.",
+    formError: "حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل عبر الهاتف.",
+    formInvalid: "من فضلك املأ جميع الحقول المطلوبة قبل الإرسال.",
+    formErrName: "الاسم مطلوب (حرفين على الأقل).",
+    formErrEmail: "أدخل بريدًا إلكترونيًا صحيحًا.",
+    formErrPhone: "أدخل رقم هاتف صحيحًا.",
+    formErrService: "اختر الخدمة المطلوبة.",
+    formErrMessage: "الرسالة مطلوبة (5 أحرف على الأقل).",
 
     ourServices: "خدماتنا الطبية",
+    servicesTitle: "خدمات متخصصة لعلاج أمراض الشبكية وجراحات العيون",
     latestArticles: "أحدث المقالات",
+    articlesTitle: "معلومات طبية تساعدك على الحفاظ على صحة عينيك",
     relatedArticles: "مقالات ذات صلة",
     whyChooseTitle: "لماذا تختار دكتور عمرو يزيد؟",
     contactInfo: "بيانات التواصل",
@@ -37,39 +44,93 @@ export const dict = {
     callUs: "اتصل بنا",
     email: "البريد الإلكتروني",
     quickLinks: "روابط سريعة",
+    medicalServices: "الخدمات الطبية",
     allRightsReserved: "جميع الحقوق محفوظة",
+    designedBy: "تصميم وتطوير Blue",
 
     fullName: "الاسم بالكامل",
+    fullNamePlaceholder: "أدخل اسمك بالكامل",
     phone: "رقم الهاتف",
+    phonePlaceholder: "أدخل رقم الهاتف",
+    emailPlaceholder: "أدخل بريدك الإلكتروني",
     chooseService: "اختر الخدمة",
     yourMessage: "رسالتك",
+    messagePlaceholder: "اكتب استفسارك أو رسالتك هنا...",
+
+    gallerySub: "معرض الصور",
+    galleryTitle: "جولة داخل العيادة وبعض آراء عملائنا",
+    videosSub: "ما نقوله",
+    videosTitle: "فيديوهاتنا",
+    testimonialsSub: "آراء العملاء",
+    testimonialsTitle: "آراء عملاءنا",
+
+    contactFormSub: "تواصل معنا",
+    contactFormTitle: "احجز موعدك الآن",
+    contactFormText:
+      "املأ النموذج التالي وسيقوم فريقنا بالتواصل معك في أقرب وقت لتأكيد موعد الحجز والإجابة عن جميع استفساراتك.",
+    contactHelpSub: "تواصل معنا",
+    contactHelpTitle: "نحن هنا للإجابة عن استفساراتك",
+    contactHelpText:
+      "إذا كنت ترغب في حجز موعد أو لديك أي استفسار بخصوص أمراض الشبكية أو المياه البيضاء أو خدمات العيادة، يسعدنا التواصل معك.",
+
+    serviceDetails: "تفاصيل الخدمة",
+    articleDetails: "تفاصيل المقال",
+    mission: "رسالتنا",
+    vision: "رؤيتنا",
 
     notFoundTitle: "الصفحة غير موجودة",
     notFoundText: "عذرًا، الصفحة اللي بتدور عليها مش موجودة.",
     backHome: "الرجوع للرئيسية",
+
+    seoHomeDesc:
+      "دكتور عمرو يزيد - استشاري أمراض وجراحات الشبكية والجسم الزجاجي والليزر. احجز موعدك الآن في معهد بحوث أمراض العيون.",
+    seoServicesDesc:
+      "تعرف على جميع الخدمات الطبية التي يقدمها دكتور عمرو يزيد: جراحات الشبكية والجسم الزجاجي، حقن الشبكية، علاج الشبكية بالليزر، علاج المياه البيضاء وزراعة العدسات.",
+    seoGalleryDesc: "جولة مصورة داخل عيادة دكتور عمرو يزيد وبعض آراء العملاء.",
+    seoVideosDesc: "شاهد فيديوهات من داخل عيادة دكتور عمرو يزيد وحالات حقيقية ونتائج العلاج.",
+    seoBlogDesc:
+      "مقالات ومعلومات طبية موثوقة عن أمراض الشبكية والجسم الزجاجي والمياه البيضاء، بقلم دكتور عمرو يزيد.",
+    seoContactDesc:
+      "احجز موعدك الآن مع دكتور عمرو يزيد، أو تواصل معنا لمعرفة عناوين العيادات وأرقام الهواتف.",
   },
 
   en: {
     home: "Home",
     about: "About the Doctor",
+    aboutUs: "About Us",
     services: "Services",
+    ourServicesPage: "Our Services",
     media: "Media",
     gallery: "Gallery",
     videos: "Videos",
+    ourVideos: "Our Videos",
     blog: "Blog",
+    medicalArticles: "Medical Articles",
     contact: "Contact Us",
 
     bookNow: "Book Your Appointment",
+    bookNowShort: "Book Now",
     readMore: "Read More",
     readArticle: "Read More",
+    readFullArticle: "Read Article",
     allServices: "All Services",
     allArticles: "View All Articles",
     allPhotos: "View All Photos",
     sendRequest: "Send Request",
     sending: "Sending...",
+    formSuccess: "Your request was sent successfully. We will contact you soon.",
+    formError: "Something went wrong. Please try again or call us.",
+    formInvalid: "Please fill in all required fields before submitting.",
+    formErrName: "Name is required (at least 2 characters).",
+    formErrEmail: "Enter a valid email address.",
+    formErrPhone: "Enter a valid phone number.",
+    formErrService: "Please choose a service.",
+    formErrMessage: "Message is required (at least 5 characters).",
 
     ourServices: "Our Medical Services",
+    servicesTitle: "Specialized services for retinal diseases and eye surgery",
     latestArticles: "Latest Articles",
+    articlesTitle: "Medical insights to help you protect your eye health",
     relatedArticles: "Related Articles",
     whyChooseTitle: "Why Choose Dr. Amr Yazeed?",
     contactInfo: "Contact Information",
@@ -77,16 +138,54 @@ export const dict = {
     callUs: "Call Us",
     email: "Email",
     quickLinks: "Quick Links",
+    medicalServices: "Medical Services",
     allRightsReserved: "All Rights Reserved",
+    designedBy: "Designed & developed by Blue",
 
     fullName: "Full Name",
+    fullNamePlaceholder: "Enter your full name",
     phone: "Phone Number",
+    phonePlaceholder: "Enter your phone number",
+    emailPlaceholder: "Enter your email address",
     chooseService: "Choose a Service",
     yourMessage: "Your Message",
+    messagePlaceholder: "Write your inquiry or message here...",
+
+    gallerySub: "Photo Gallery",
+    galleryTitle: "A look inside the clinic and some patient stories",
+    videosSub: "What We Share",
+    videosTitle: "Our Videos",
+    testimonialsSub: "Patient Reviews",
+    testimonialsTitle: "What Our Patients Say",
+
+    contactFormSub: "Contact Us",
+    contactFormTitle: "Book Your Appointment",
+    contactFormText:
+      "Fill in the form below and our team will contact you shortly to confirm your appointment and answer all your questions.",
+    contactHelpSub: "Get in Touch",
+    contactHelpTitle: "We're here to answer your questions",
+    contactHelpText:
+      "If you'd like to book an appointment or have any questions about retinal diseases, cataracts, or clinic services, we'd be happy to hear from you.",
+
+    serviceDetails: "Service Details",
+    articleDetails: "Article Details",
+    mission: "Our Mission",
+    vision: "Our Vision",
 
     notFoundTitle: "Page Not Found",
     notFoundText: "Sorry, the page you're looking for doesn't exist.",
     backHome: "Back to Home",
+
+    seoHomeDesc:
+      "Dr. Amr Yazeed - Consultant of Retina, Vitreous & Laser Diseases and Surgery. Book your appointment at the Research Institute of Ophthalmology.",
+    seoServicesDesc:
+      "Explore all medical services offered by Dr. Amr Yazeed: retina & vitreous surgery, retinal injections, retinal laser, cataract treatment, and lens implantation.",
+    seoGalleryDesc: "A photo tour inside Dr. Amr Yazeed's clinic and patient moments.",
+    seoVideosDesc: "Watch videos from Dr. Amr Yazeed's clinic, real cases, and treatment results.",
+    seoBlogDesc:
+      "Reliable medical articles about retina, vitreous, and cataract conditions by Dr. Amr Yazeed.",
+    seoContactDesc:
+      "Book your appointment with Dr. Amr Yazeed, or contact us for clinic addresses and phone numbers.",
   },
 };
 

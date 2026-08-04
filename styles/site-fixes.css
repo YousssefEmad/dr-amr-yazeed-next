@@ -1,0 +1,452 @@
+/* =========================================================================
+   site-fixes.css — layout, fonts, images, forms
+   ========================================================================= */
+
+/* ---- Fonts (next/font CSS variables + Google fallbacks) ---- */
+body,
+.dmSansFont {
+  font-family: var(--font-cairo), "Cairo", "DM Sans", sans-serif !important;
+}
+
+[dir="ltr"] body,
+[dir="ltr"] .dmSansFont {
+  font-family: var(--font-dm-sans), "DM Sans", "Cairo", sans-serif !important;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+.playFairFont,
+.banner .hero-sub-heading {
+  font-family: var(--font-playfair), "Playfair Display", "Cairo", serif !important;
+}
+
+[dir="ltr"] h1,
+[dir="ltr"] .h1,
+[dir="ltr"] h2,
+[dir="ltr"] .h2,
+[dir="ltr"] h3,
+[dir="ltr"] .h3,
+[dir="ltr"] h4,
+[dir="ltr"] .h4,
+[dir="ltr"] h5,
+[dir="ltr"] .h5,
+[dir="ltr"] h6,
+[dir="ltr"] .h6,
+[dir="ltr"] .playFairFont {
+  font-family: var(--font-playfair), "Playfair Display", "DM Sans", serif !important;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  text-transform: none;
+}
+
+/* ---- Hero ---- */
+.banner {
+  min-height: 85vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.banner .banner-img {
+  inset: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+.banner .banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 0 !important;
+}
+
+.banner .banner-img::after {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  ) !important;
+}
+
+.banner .banner-content {
+  padding: 140px 0 100px !important;
+  text-align: start !important;
+}
+
+.banner .hero-text {
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  line-height: 1.2 !important;
+  text-transform: none !important;
+  max-width: 16ch;
+}
+
+.banner .hero-job {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  line-height: 1.5;
+  max-width: 36ch;
+  font-family: var(--font-cairo), "Cairo", "DM Sans", sans-serif !important;
+  text-transform: none !important;
+}
+
+.banner .hero-affiliation {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 991px) {
+  .banner .banner-content {
+    padding: 120px 0 80px !important;
+    text-align: center !important;
+  }
+
+  .banner .hero-text,
+  .banner .hero-job {
+    max-width: none;
+    margin-inline: auto;
+  }
+}
+
+/* ---- About: no absolute overlap ---- */
+.about .about-img {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: 600px !important;
+  max-height: 640px;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 16px !important;
+  display: block;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  padding: 12px 0 24px;
+}
+
+.about .about-content .team-feature {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 991px) {
+  .about .about-img {
+    max-height: 420px;
+  }
+}
+
+/* ---- Doctor chief (restored nice layout) ---- */
+.doctor-chief-section {
+  margin: 48px 0 24px;
+}
+
+.tp-doctor__chief {
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 0 !important;
+  align-items: stretch;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.tp-doctor__chief-info {
+  padding: 40px 36px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tp-doctor__chief-name {
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  margin-bottom: 16px !important;
+  text-transform: none;
+}
+
+.doctor-chief-role {
+  text-transform: none !important;
+  font-family: var(--font-cairo), "Cairo", "DM Sans", sans-serif !important;
+  line-height: 1.5;
+  color: #e2bf6b;
+}
+
+.tp-doctor__chief-img {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.tp-doctor__chief-img img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 420px;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block;
+}
+
+.doctor-chief-quals {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 20px;
+}
+
+.doctor-chief-quals li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.doctor-chief-quals li i {
+  color: #e2bf6b;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  .tp-doctor__chief {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tp-doctor__chief-img {
+    min-height: 320px;
+    order: -1;
+  }
+
+  .tp-doctor__chief-img img {
+    min-height: 320px;
+  }
+}
+
+/* ---- Specialty hero: fixed parallax bg + centered content ---- */
+.specialty-hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 48px 0 64px;
+  isolation: isolate;
+}
+
+.specialty-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.specialty-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
+    rgba(0, 0, 0, 0.78) 100%
+  ) !important;
+}
+
+.specialty-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 20px;
+  max-width: 820px;
+  margin: 0 auto !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specialty-hero__content h2 {
+  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+  line-height: 1.35;
+  text-transform: none;
+  margin-bottom: 1rem;
+  color: #fff;
+  max-width: 18em;
+}
+
+.specialty-hero__content p {
+  color: #d7d7d7;
+  font-size: 1.08rem;
+  margin-bottom: 1.75rem;
+  max-width: 40ch;
+}
+
+/* iOS / mobile: fixed attachment often broken — fall back */
+@supports (-webkit-touch-callout: none) {
+  .specialty-hero__bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 991px) {
+  .specialty-hero {
+    min-height: 380px;
+  }
+
+  .specialty-hero__bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .specialty-hero__bg {
+    background-attachment: scroll;
+  }
+}
+
+/* ---- Services grid ---- */
+.services .service-card-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -8px 24px;
+}
+
+.services .service-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+  padding: 8px;
+  border: none !important;
+}
+
+@media (min-width: 576px) {
+  .services .service-card {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .services .service-card {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+
+  /* Home: 4 cards in one row */
+  .services .service-card-area--home .service-card {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services .service-card {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  .services .service-card-area--home .service-card {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+.service-card-inner img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.service-card-area--home .service-overlay p {
+  display: none;
+}
+
+.service-card-area--home .service-overlay {
+  opacity: 1;
+  transform: none;
+  background: linear-gradient(transparent 35%, rgba(0, 0, 0, 0.85));
+  justify-content: flex-end;
+}
+
+.service-card-area--home .service-overlay h4 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  text-transform: none;
+}
+
+@media (min-width: 1200px) {
+  .service-card-inner img {
+    height: 300px;
+  }
+}
+
+/* ---- Images ---- */
+.details-left > img,
+.blog-list .blog-img img,
+.project-card img,
+.more-news img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.details-left > img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  border-radius: 12px;
+}
+
+.blog-list .blog-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.page-banner {
+  background-size: cover;
+  background-position: center;
+}
+
+.project-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ---- Page overflow lock (prevents horizontal scroll) ---- */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ---- Contact form status ---- */
+.form-status-success {
+  color: #8bd18b !important;
+}
+
+.form-status-error {
+  color: #ff8a8a !important;
+}

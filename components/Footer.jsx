@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import { services } from "@/data/services";
+import { useLocale } from "@/context/LocaleContext";
+import { pick, t } from "@/lib/i18n";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { locale } = useLocale();
 
   return (
     <footer className="footer footer-two">
@@ -11,37 +14,42 @@ export default function Footer() {
         <div className="row g-4">
           <div className="col-lg-3">
             <div className="footer-card">
-              <Link href="/" aria-label="الصفحة الرئيسية">
-                <img src={siteConfig.logo} className="img-fluid mb-4" alt={siteConfig.name} style={{ width: 110 }} />
+              <Link href="/" aria-label={t("home", locale)}>
+                <img
+                  src={siteConfig.logo}
+                  className="img-fluid mb-4"
+                  alt={pick(siteConfig, "name", locale)}
+                  style={{ width: 110 }}
+                />
               </Link>
-              <p>{siteConfig.descriptionEn ? siteConfig.description : siteConfig.description}</p>
+              <p>{pick(siteConfig, "description", locale)}</p>
             </div>
           </div>
 
           <div className="col-lg-3 col-md-4 col-6">
-            <h4 className="mb-4 text-n500">روابط سريعة</h4>
+            <h4 className="mb-4 text-n500">{t("quickLinks", locale)}</h4>
             <ul className="navigation-links">
-              <li><Link href="/">الرئيسية</Link></li>
-              <li><Link href="/about-us">نبذة عن الدكتور</Link></li>
-              <li><Link href="/services">الخدمات</Link></li>
-              <li><Link href="/blog">المقالات</Link></li>
-              <li><Link href="/contact-us">تواصل معنا</Link></li>
+              <li><Link href="/">{t("home", locale)}</Link></li>
+              <li><Link href="/about-us">{t("about", locale)}</Link></li>
+              <li><Link href="/services">{t("services", locale)}</Link></li>
+              <li><Link href="/blog">{t("blog", locale)}</Link></li>
+              <li><Link href="/contact-us">{t("contact", locale)}</Link></li>
             </ul>
           </div>
 
           <div className="col-lg-3 col-md-4 col-6">
-            <h4 className="mb-4 text-n500">الخدمات الطبية</h4>
+            <h4 className="mb-4 text-n500">{t("medicalServices", locale)}</h4>
             <ul className="navigation-links">
               {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`}>{s.title}</Link>
+                  <Link href={`/services/${s.slug}`}>{pick(s, "title", locale)}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="col-lg-3 col-md-4">
-            <h4 className="pb-3 text-n500">بيانات التواصل</h4>
+            <h4 className="pb-3 text-n500">{t("contactInfo", locale)}</h4>
             <ul className="contact-two mb-3">
               {siteConfig.phones.map((p, i) => (
                 <li className="contact-item" key={i}>
@@ -55,7 +63,9 @@ export default function Footer() {
               </li>
               <li className="contact-item">
                 <div className="contact-icon"><i className="ph ph-map-pin" /></div>
-                <p>{siteConfig.clinics[0].address}</p>
+                <p>
+                  {siteConfig.clinics.map((c) => pick(c, "name", locale)).join(" · ")}
+                </p>
               </li>
             </ul>
 
@@ -73,7 +83,8 @@ export default function Footer() {
 
         <div className="copyright-two">
           <p>
-            © 2026 دكتور عمرو يزيد. جميع الحقوق محفوظة | تصميم وتطوير Blue
+            © {year} {pick(siteConfig, "name", locale)}. {t("allRightsReserved", locale)} |{" "}
+            {t("designedBy", locale)}
           </p>
         </div>
       </div>

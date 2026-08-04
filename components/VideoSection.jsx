@@ -1,4 +1,10 @@
+import { useLocale } from "@/context/LocaleContext";
+import { pick } from "@/lib/i18n";
+
 export function VideoCard({ video, height = 420 }) {
+  const { locale } = useLocale();
+  const title = pick(video, "title", locale);
+
   return (
     <div className="testimonial-card">
       <iframe
@@ -8,7 +14,7 @@ export function VideoCard({ video, height = 420 }) {
         frameBorder="0"
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        title={video.title}
+        title={title}
         loading="lazy"
       />
     </div>

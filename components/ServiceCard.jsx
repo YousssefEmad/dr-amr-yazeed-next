@@ -1,16 +1,20 @@
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
+import { pick, t } from "@/lib/i18n";
 
-export function ServiceCard({ service }) {
+export function ServiceCard({ service, compact = false }) {
+  const { locale } = useLocale();
+
   return (
-    <div className="service-card col-sm-6 col-lg-3">
+    <div className="service-card">
       <div className="service-card-inner">
-        <img src={service.image} alt={service.title} loading="lazy" />
+        <img src={service.image} alt={pick(service, "title", locale)} loading="lazy" />
         <div className="service-overlay">
-          <h4>{service.title}</h4>
-          <p>{service.shortDescription}</p>
+          <h4>{pick(service, "title", locale)}</h4>
+          {!compact && <p>{pick(service, "shortDescription", locale)}</p>}
           <div className="readmore">
             <Link href={`/services/${service.slug}`} className="playFairFont">
-              اعرف المزيد
+              {t("readMore", locale)}
             </Link>
             <i className="ph ph-arrow-left" />
           </div>
@@ -20,7 +24,15 @@ export function ServiceCard({ service }) {
   );
 }
 
-export default function ServicesGrid({ services, title, subHeading }) {
+export default function ServicesGrid({
+  services,
+  title,
+  subHeading,
+  showAllLink = true,
+  compact = false,
+}) {
+  const { locale } = useLocale();
+
   return (
     <section className="services" id="services">
       <div className="container">
@@ -32,16 +44,18 @@ export default function ServicesGrid({ services, title, subHeading }) {
             </div>
           </div>
         )}
-        <div className="service-card-area row">
+        <div className={`service-card-area${compact ? " service-card-area--home" : ""}`}>
           {services.map((s) => (
-            <ServiceCard key={s.slug} service={s} />
+            <ServiceCard key={s.slug} service={s} compact={compact} />
           ))}
         </div>
-              <div className="container d-flex justify-content-center pb-5">
-                <Link href="/services" className="outline-btn secondary playFairFont">
-                  جميع الخدمات <i className="ph ph-arrow-left" />
-                </Link>
-              </div>
+        {showAllLink && (
+          <div className="d-flex justify-content-center pb-5 mt-3">
+            <Link href="/services" className="outline-btn secondary playFairFont">
+              {t("allServices", locale)} <i className="ph ph-arrow-left" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

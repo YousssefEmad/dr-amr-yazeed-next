@@ -13,7 +13,7 @@ import { doctor } from "@/data/doctor";
 import { services } from "@/data/services";
 import { posts } from "@/data/blog";
 import { galleryImages } from "@/data/gallery";
-import { clinicVideos, testimonialVideos } from "@/data/videos";
+import { clinicVideos, homeTestimonialVideos } from "@/data/videos";
 import { useLocale } from "@/context/LocaleContext";
 import { pick, t } from "@/lib/i18n";
 
@@ -68,7 +68,8 @@ export default function HomePage() {
         videos={clinicVideos}
         subHeading={t("videosSub", locale)}
         title={t("videosTitle", locale)}
-        cols="col-lg-2"
+        cols="col-lg"
+        variant="reel"
       />
 
       <section className="gallery pt-120 pb-120">
@@ -87,9 +88,13 @@ export default function HomePage() {
       </section>
 
       <VideoGrid
-        videos={testimonialVideos}
+        videos={homeTestimonialVideos}
         subHeading={t("testimonialsSub", locale)}
         title={t("testimonialsTitle", locale)}
+        cols="col-lg-3"
+        variant="wide"
+        moreHref="/testimonials"
+        moreLabel={t("moreTestimonials", locale)}
       />
 
       <section className="recent-news pt-120 pb-120">

@@ -10,10 +10,10 @@ export const doctor = {
   jobTitleEn: "Lecturer & Consultant of Retina, Vitreous & Laser Diseases and Surgery",
   affiliation: "معهد بحوث أمراض العيون",
   affiliationEn: "Research Institute of Ophthalmology",
-  heroImage: "/images/banner-hero.png",
+  heroImage: "/images/banner-hero.jpeg",
   portraitImage: "/images/doc.jpeg",
   secondaryImage: "/images/doc-3.jpeg",
-  specialtyImage: "/images/serv.jpg",
+  specialtyImage: "/images/banner-hero.jpeg",
 
   aboutHeading: "رعاية متخصصة للحفاظ على صحة الشبكية وجودة الإبصار",
   aboutHeadingEn: "Specialized care to protect retinal health and vision quality",

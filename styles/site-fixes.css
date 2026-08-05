@@ -2,46 +2,89 @@
    site-fixes.css — layout, fonts, images, forms
    ========================================================================= */
 
-/* ---- Fonts (next/font CSS variables + Google fallbacks) ---- */
+/* ---- Fonts: Cairo ONLY for all site text (permanent) ---- */
+:root {
+  --site-font: var(--font-cairo), "Cairo", Tahoma, Arial, sans-serif;
+}
+
+.site-font-root,
+html,
 body,
-.dmSansFont {
-  font-family: var(--font-cairo), "Cairo", "DM Sans", sans-serif !important;
-}
-
-[dir="ltr"] body,
-[dir="ltr"] .dmSansFont {
-  font-family: var(--font-dm-sans), "DM Sans", "Cairo", sans-serif !important;
-}
-
+button,
+input,
+select,
+textarea,
+label,
+a,
+p,
+span,
+li,
+td,
+th,
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+.dmSansFont,
 .playFairFont,
-.banner .hero-sub-heading {
-  font-family: var(--font-playfair), "Playfair Display", "Cairo", serif !important;
+.sub-heading,
+.banner .hero-sub-heading,
+.banner .hero-job,
+.banner .hero-text,
+.primary-btn,
+.outline-btn,
+.theme-btn,
+.menu,
+.footer,
+.contact-form,
+.section-title,
+.doctor-chief-role {
+  font-family: var(--site-font) !important;
 }
 
-[dir="ltr"] h1,
-[dir="ltr"] .h1,
-[dir="ltr"] h2,
-[dir="ltr"] .h2,
-[dir="ltr"] h3,
-[dir="ltr"] .h3,
-[dir="ltr"] h4,
-[dir="ltr"] .h4,
-[dir="ltr"] h5,
-[dir="ltr"] .h5,
-[dir="ltr"] h6,
-[dir="ltr"] .h6,
-[dir="ltr"] .playFairFont {
-  font-family: var(--font-playfair), "Playfair Display", "DM Sans", serif !important;
+/* Keep Phosphor / Font Awesome icons intact */
+i.ph,
+.ph::before,
+[class^="ph-"]::before,
+[class*=" ph-"]::before {
+  font-family: "Phosphor" !important;
 }
 
+.fa::before,
+.fas::before,
+.far::before,
+[class^="fa-"]::before,
+[class*=" fa-"]::before {
+  font-family: "Font Awesome 6 Free" !important;
+}
+
+.fab::before {
+  font-family: "Font Awesome 6 Brands" !important;
+}
+
+h1, h2, h3, h4, h5, h6,
 [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] h4,
 [dir="rtl"] h5,
-[dir="rtl"] h6 {
+[dir="rtl"] h6,
+[dir="ltr"] h1,
+[dir="ltr"] h2,
+[dir="ltr"] h3,
+[dir="ltr"] h4,
+[dir="ltr"] h5,
+[dir="ltr"] h6 {
   text-transform: none;
+  font-style: normal;
+}
+
+.sub-heading {
+  font-style: normal !important;
+}
+
+/* ---- Page overflow lock ---- */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* ---- Hero ---- */
@@ -91,7 +134,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   font-size: clamp(1rem, 2.2vw, 1.35rem);
   line-height: 1.5;
   max-width: 36ch;
-  font-family: var(--font-cairo), "Cairo", "DM Sans", sans-serif !important;
   text-transform: none !important;
 }
 
@@ -144,7 +186,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   }
 }
 
-/* ---- Doctor chief (restored nice layout) ---- */
+/* ---- Doctor chief ---- */
 .doctor-chief-section {
   margin: 48px 0 24px;
 }
@@ -176,7 +218,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 
 .doctor-chief-role {
   text-transform: none !important;
-  font-family: var(--font-cairo), "Cairo", "DM Sans", sans-serif !important;
   line-height: 1.5;
   color: #e2bf6b;
 }
@@ -231,7 +272,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   }
 }
 
-/* ---- Specialty hero: fixed parallax bg + centered content ---- */
+/* ---- Specialty hero ---- */
 .specialty-hero {
   position: relative;
   min-height: 460px;
@@ -293,7 +334,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   max-width: 40ch;
 }
 
-/* iOS / mobile: fixed attachment often broken — fall back */
 @supports (-webkit-touch-callout: none) {
   .specialty-hero__bg {
     background-attachment: scroll;
@@ -345,7 +385,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     max-width: 33.333%;
   }
 
-  /* Home: 4 cards in one row */
   .services .service-card-area--home .service-card {
     flex: 0 0 25%;
     max-width: 25%;
@@ -394,6 +433,57 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   }
 }
 
+/* ---- Videos ----
+   The reserved frame keeps its exact size before/after the embed loads, and
+   scroll anchoring is disabled so pressing play never shifts the page. */
+.video-section .testimonial-inner,
+.video-section .row,
+.video-card,
+.video-card__frame {
+  overflow-anchor: none;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  background: #111;
+  overflow: hidden;
+}
+
+.video-card__frame {
+  position: relative;
+  width: 100%;
+  height: 0;
+  border-radius: 12px;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+/* 9:16 reels */
+.video-card--reel .video-card__frame {
+  padding-bottom: 177.78%;
+}
+
+/* 16:9 wide */
+.video-card--wide .video-card__frame {
+  padding-bottom: 56.25%;
+}
+
+.video-card__frame iframe,
+.video-section .testimonial-card iframe,
+.testimonial-card iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  border: 0 !important;
+  border-radius: 12px;
+  display: block;
+}
+
 /* ---- Images ---- */
 .details-left > img,
 .blog-list .blog-img img,
@@ -433,13 +523,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   object-fit: cover;
   object-position: center;
   display: block;
-}
-
-/* ---- Page overflow lock (prevents horizontal scroll) ---- */
-html,
-body {
-  overflow-x: hidden;
-  max-width: 100%;
 }
 
 /* ---- Contact form status ---- */

@@ -82,6 +82,7 @@ export const siteConfig = {
       children: [
         { label: "معرض الصور", labelEn: "Gallery", href: "/gallery" },
         { label: "الفيديوهات", labelEn: "Videos", href: "/video" },
+        { label: "آراء العملاء", labelEn: "Reviews", href: "/testimonials" },
       ],
     },
     { label: "المقالات", labelEn: "Blog", href: "/blog" },

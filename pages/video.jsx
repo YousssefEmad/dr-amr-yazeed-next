@@ -17,7 +17,7 @@ export default function VideoPage() {
       />
       <PageBanner title={t("ourVideos", locale)} crumb={t("videos", locale)} />
 
-      <VideoGrid videos={clinicVideos} cols="col-lg-2" />
+      <VideoGrid videos={clinicVideos} cols="col-lg" variant="reel" />
     </>
   );
 }

@@ -2,7 +2,6 @@
    rtl-ltr.css — LTR (English) direction fixes
    ========================================================================= */
 
-/* globals.css hardcodes direction:rtl on html/body — override with html[dir] */
 html[dir="ltr"],
 html[dir="ltr"] body {
   direction: ltr !important;
@@ -15,7 +14,6 @@ html[dir="rtl"] body {
   text-align: right !important;
 }
 
-/* Bootstrap helpers that force right alignment in English */
 [dir="ltr"] .text-start,
 [dir="ltr"] .text-end {
   text-align: inherit !important;
@@ -27,17 +25,28 @@ html[dir="rtl"] body {
   text-align: left !important;
 }
 
-/* Floating buttons */
-[dir="ltr"] .back-to-top {
-  inset-inline-end: 24px;
-  right: auto;
-  left: 24px;
+/*
+  Floating actions stay on opposite sides in BOTH languages:
+  - Call / WhatsApp: always physical LEFT
+  - Back to top: always physical RIGHT
+  Do NOT flip them with dir=ltr (that caused overlap).
+*/
+.back-to-top {
+  left: auto !important;
+  right: 24px !important;
 }
 
-[dir="ltr"] .wrapper {
-  inset-inline-start: 16px;
-  left: 16px;
-  right: auto;
+.back-to-top.show {
+  transform: translateX(0) !important;
+}
+
+.back-to-top:not(.show) {
+  transform: translateX(120%) !important;
+}
+
+.wrapper {
+  left: 8px !important;
+  right: auto !important;
 }
 
 /* Flip back-arrows in LTR */
@@ -48,7 +57,6 @@ html[dir="rtl"] body {
   transform: scaleX(-1);
 }
 
-/* Hero / section titles */
 [dir="ltr"] .banner .banner-content,
 [dir="ltr"] .section-title,
 [dir="ltr"] .about-content,
@@ -60,12 +68,13 @@ html[dir="rtl"] body {
 [dir="ltr"] .help-card {
   text-align: left;
 }
-
+[dir="ltr"] .section-title{
+  text-align: center !important;
+}
 [dir="ltr"] .banner .d-flex.justify-content-lg-start {
   justify-content: flex-start !important;
 }
 
-/* Header menu */
 [dir="ltr"] .header .menu {
   flex-direction: row;
 }
@@ -80,7 +89,6 @@ html[dir="rtl"] body {
   text-align: left;
 }
 
-/* Doctor chief border accent */
 [dir="ltr"] .tp-doctor__chief-name {
   border-left: none;
   border-right: none;
@@ -92,7 +100,6 @@ html[dir="rtl"] body {
   border-inline-start: 4px solid #fff;
 }
 
-/* About column order */
 [dir="ltr"] .about-media-col {
   order: 0;
 }
@@ -101,23 +108,19 @@ html[dir="rtl"] body {
   order: 1;
 }
 
-/* Team feature list icons */
 [dir="ltr"] .team-feature li,
 [dir="ltr"] .doctor-chief-quals li {
   flex-direction: row;
 }
 
-/* Breadcrumb */
 [dir="ltr"] .page-banner .banner-content ul {
   justify-content: flex-start;
 }
 
-/* Service overlay text */
 [dir="ltr"] .service-overlay {
   text-align: left;
 }
 
-/* Footer lists */
 [dir="ltr"] .navigation-links,
 [dir="ltr"] .contact-two {
   text-align: left;

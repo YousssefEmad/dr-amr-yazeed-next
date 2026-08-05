@@ -11,9 +11,13 @@ const reelIds = [
   "764112029874924",
 ];
 
+function reelEmbed(id, { height = 476, width = 267 } = {}) {
+  return `https://www.facebook.com/plugins/video.php?height=${height}&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${id}%2F&show_text=false&width=${width}&t=0`;
+}
+
 export const clinicVideos = reelIds.map((id, i) => ({
   id,
-  embedUrl: `https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${id}%2F&show_text=false&width=267&t=0`,
+  embedUrl: reelEmbed(id, { height: 476, width: 267 }),
   title: `فيديو ${i + 1}`,
   titleEn: `Video ${i + 1}`,
 }));
@@ -27,9 +31,12 @@ const testimonialIds = [
 
 export const testimonialVideos = testimonialIds.map((id, i) => ({
   id,
-  embedUrl: `https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${id}%2F&show_text=false&width=560&t=0`,
+  embedUrl: reelEmbed(id, { height: 314, width: 560 }),
   title: `رأي عميل ${i + 1}`,
   titleEn: `Patient review ${i + 1}`,
 }));
 
-export default { clinicVideos, testimonialVideos };
+/** Videos shown on the homepage testimonials strip */
+export const homeTestimonialVideos = testimonialVideos.slice(0, 4);
+
+export default { clinicVideos, testimonialVideos, homeTestimonialVideos };

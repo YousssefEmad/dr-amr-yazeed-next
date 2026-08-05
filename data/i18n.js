@@ -63,6 +63,11 @@ export const dict = {
     videosTitle: "فيديوهاتنا",
     testimonialsSub: "آراء العملاء",
     testimonialsTitle: "آراء عملاءنا",
+    testimonialsPage: "آراء العملاء",
+    moreTestimonials: "المزيد من آراء العملاء",
+    moreVideos: "المزيد من الفيديوهات",
+    seoTestimonialsDesc:
+      "شاهد آراء وتجارب عملاء دكتور عمرو يزيد من داخل العيادة.",
 
     contactFormSub: "تواصل معنا",
     contactFormTitle: "احجز موعدك الآن",
@@ -157,6 +162,11 @@ export const dict = {
     videosTitle: "Our Videos",
     testimonialsSub: "Patient Reviews",
     testimonialsTitle: "What Our Patients Say",
+    testimonialsPage: "Patient Reviews",
+    moreTestimonials: "More patient reviews",
+    moreVideos: "More videos",
+    seoTestimonialsDesc:
+      "Watch patient reviews and experiences from Dr. Amr Yazeed's clinic.",
 
     contactFormSub: "Contact Us",
     contactFormTitle: "Book Your Appointment",

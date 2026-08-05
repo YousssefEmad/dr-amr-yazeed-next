@@ -16210,7 +16210,7 @@ fieldset:disabled .btn {
 }
 
 body {
-  font-family: "DM Sans", serif;
+  font-family: "Cairo", sans-serif;
   font-size: 14px;
   background-color: #000000;
   color: #fff;
@@ -16246,7 +16246,7 @@ textarea:focus {
 }
 
 .dmSansFont {
-  font-family: "DM Sans", serif
+  font-family: "Cairo", sans-serif
 }
 
 .text-n20 {
@@ -16310,12 +16310,12 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "Playfair", serif;
+  font-family: "Cairo", sans-serif;
   font-weight: 500
 }
 
 .playFairFont {
-  font-family: "Playfair", serif
+  font-family: "Cairo", sans-serif
 }
 
 h1 {
@@ -16560,7 +16560,7 @@ input[type=number]::-webkit-outer-spin-button {
   transition: .5s;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: "Playfair", serif;
+  font-family: "Cairo", sans-serif;
   z-index: 1
 }
 
@@ -16850,7 +16850,7 @@ select {
   font-size: 40px;
   -webkit-text-stroke-width: 1;
   -webkit-text-stroke-color: #181818;
-  font-family: "DM Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .vertical-white {
@@ -17177,7 +17177,7 @@ select {
   font-style: italic;
   font-size: 16px;
   text-transform: capitalize;
-  font-family: "Playfair", serif;
+  font-family: "Cairo", sans-serif;
   font-style: italic;
   margin-bottom: 8px;
   display: block;
@@ -18614,7 +18614,7 @@ background-color: #0101017d;
   font-weight: 500;
   color: #e2bf6b;
   font-style: italic;
-  font-family: "PlayFair", sans-serif;
+  font-family: "Cairo", sans-serif;
   display: block
 }
 
@@ -20051,7 +20051,7 @@ background-color: #0101017d;
 
 .gallery .project-card.overlay p,
 .gallery .project-card.overlay h4 {
-  font-family: "DM Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .gallery .project-card.overlay p {
@@ -21409,7 +21409,7 @@ background-color: #0101017d;
 .counter-card h2 {
   color: #e2bf6b;
   transition-duration: 300ms;
-  font-family: "DM Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .counter-card span {
@@ -21516,7 +21516,7 @@ background-color: #0101017d;
 
 .expert-card-2 h5 {
   text-transform: capitalize;
-  font-family: "DM Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .testimonial-2 {
@@ -22018,7 +22018,7 @@ padding: 10px 0 !important;
 .banner-3 .scroll-banner .vertical-sm,
 .banner-3 .scroll-banner .vertical-sm-black {
   -webkit-text-stroke-color: #e2bf6b;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cairo", sans-serif;
   letter-spacing: 8px
 }
 
@@ -22313,7 +22313,7 @@ padding: 10px 0 !important;
   gap: 24px;
   border: 1px solid #fff;
   z-index: 2;
-  font-family: "Playfair", serif;
+  font-family: "Cairo", sans-serif;
   text-transform: uppercase;
   font-weight: 500
 }
@@ -24007,7 +24007,7 @@ padding: 10px 0 !important;
 .hero-5 .swiper-slide .hero5-banner-content .container .discount,
 .hero-5 .swiper-slide .hero5-banner-content .container .percent,
 .hero-5 .swiper-slide .hero5-banner-content .container .off {
-  font-family: "DM Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .hero-5 .swiper-slide .hero5-banner-content .container .discount {
@@ -24548,7 +24548,7 @@ padding: 10px 0 !important;
 
 .about-five .about-img .rating h2,
 .about-five .about-img .rating p {
-  font-family: "DM Sans", serif;
+  font-family: "Cairo", sans-serif;
   color: #e2bf6b
 }
 
@@ -24657,7 +24657,7 @@ padding: 10px 0 !important;
 
 .features-6 .exp-img .exp-info h2 {
   color: #e2bf6b;
-  font-family: "DM Sans", serif
+  font-family: "Cairo", sans-serif
 }
 
 .features-6 .exp-img .exp-info p {
@@ -24675,7 +24675,7 @@ padding: 10px 0 !important;
     right: -80px;
     padding: 20px 24px;
     bottom: 40px;
-    font-family: "DM Sans", serif
+    font-family: "Cairo", sans-serif
   }
 }
 
@@ -25188,7 +25188,7 @@ display: flex;
   color: #222e48;
   align-items: center;
   gap: 10px;
-  font-family: "Playfair", serif;
+  font-family: "Cairo", sans-serif;
   font-size: 1.2rem
 }
 
@@ -25515,7 +25515,7 @@ display: flex;
 .review-card h5 {
   text-transform: capitalize;
   font-weight: 500;
-  font-family: "Dm Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .review-form input,
@@ -25724,7 +25724,7 @@ display: flex;
 
 .delivery-card h5 {
   text-transform: capitalize;
-  font-family: "Dm Sans", sans-serif
+  font-family: "Cairo", sans-serif
 }
 
 .rating i {
@@ -25827,7 +25827,7 @@ display: flex;
   line-height: 100%;
   color: #e2bf6b;
   margin-bottom: 0;
-  font-family: "DM Sans", serif
+  font-family: "Cairo", sans-serif
 }
 
 .blog-grid .blog-img .date p {
@@ -25947,7 +25947,7 @@ display: flex;
 
 .blog-list .blog-img .date h3 {
   font-size: 32px;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cairo", sans-serif;
   font-weight: 600;
   line-height: 100%;
   margin-bottom: 0;
@@ -26695,7 +26695,7 @@ color: #e2bf6b;
 /* FORM */
 .form-box { display: flex; flex-direction: column; gap: 8px; }
 .form-box label { font-size: 13px; color: #555; display: block; margin-bottom: 2px;   }
-.form-box input, .form-box textarea { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px;   font-family: Arial, sans-serif; }
+.form-box input, .form-box textarea { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px;   font-family: "Cairo", sans-serif; }
 .form-box textarea { resize: vertical; min-height: 70px; }
 .btn-send { padding: 9px; border-radius: 8px; border: none; background: #e2bf6b; color: #fff; font-size: 14px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; }
 .btn-send:hover { background: #045f87; }

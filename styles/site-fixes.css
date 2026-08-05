@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
 /* =========================================================================
    site-fixes.css — layout, fonts, images, forms
    ========================================================================= */
 
 /* ---- Fonts: Cairo ONLY for all site text (permanent) ---- */
 :root {
-  --site-font: var(--font-cairo), "Cairo", Tahoma, Arial, sans-serif;
+  --site-font: "Cairo", sans-serif;
+  --bs-font-sans-serif: var(--site-font);
+  --bs-body-font-family: var(--site-font);
 }
 
 .site-font-root,
@@ -36,6 +40,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 .contact-form,
 .section-title,
 .doctor-chief-role {
+  font-family: var(--site-font) !important;
+}
+
+/* Final catch-all for every text element, excluding icon-font elements. */
+.site-font-root
+  *:not(.ph):not([class^="ph-"]):not([class*=" ph-"]):not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not([class^="fa-"]):not([class*=" fa-"]) {
   font-family: var(--site-font) !important;
 }
 
@@ -460,9 +470,21 @@ body {
   overflow: hidden;
 }
 
-/* 9:16 reels */
+/* 9:16 reels — keep the card inside the viewport so the browser never needs
+   to scroll it into view once the player takes focus. */
+.video-card--reel {
+  width: min(100%, 300px);
+  margin-inline: auto;
+}
+
 .video-card--reel .video-card__frame {
   padding-bottom: 177.78%;
+}
+
+@media (min-width: 992px) {
+  .video-card--reel .video-card__frame {
+    padding-bottom: min(177.78%, 60vh);
+  }
 }
 
 /* 16:9 wide */

@@ -19328,7 +19328,7 @@ background-color: #0101017d;
 
 .tp-doctor__chief-img {
   position: relative;
-  height: auto;
+  height: 100%;
   overflow: hidden;
 }
 

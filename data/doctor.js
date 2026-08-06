@@ -11,7 +11,7 @@ export const doctor = {
   affiliation: "معهد بحوث أمراض العيون",
   affiliationEn: "Research Institute of Ophthalmology",
   heroImage: "/images/banner-hero.jpeg",
-  portraitImage: "/images/doc.jpeg",
+  portraitImage: "/images/dor-about.jpeg",
   secondaryImage: "/images/doc-3.jpeg",
   specialtyImage: "/images/banner-hero.jpeg",
 
